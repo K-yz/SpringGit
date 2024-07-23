@@ -45,8 +45,7 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("employeeId") int theId,
-									Model theModel) {
+	public String showFormForUpdate(@RequestParam("employeeId") int theId, Model theModel) {
 		
 		// get the employee from the service
 		Employee theEmployee = employeeService.findById(theId);
