@@ -46,6 +46,7 @@ public class UserController {
     public String delete(@RequestParam("userId") int theId) {
         userService.deleteById(theId);
         return "redirect:/users/list";
-
     }
+
+
 }
