@@ -9,6 +9,4 @@ public interface MenuService {
     public List<Menu> findAll();
     public Menu findById(int TheId);
     public void deleteById(int TheId);
-
-
 }

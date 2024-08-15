@@ -13,7 +13,9 @@ import java.util.List;
 public class UserController {
     private UserService userService;
 
-    public UserController(UserService theUserService) {userService = theUserService;}
+    public UserController(UserService theUserService) {
+        userService = theUserService;
+    }
 
     @GetMapping("/list")
     public String listUsers(Model theModel) {

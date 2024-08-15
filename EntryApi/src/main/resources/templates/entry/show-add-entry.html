@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+
+    <title>Save Entry</title>
+</head>
+
+<body>
+<div class="container">
+    <h3>Entry Directory</h3>
+    <hr>
+    <p class="h4 mb-4">Save Entry</p>
+    <form action="#" th:action="@{/entry/save}" th:object="${entry}" method="POST" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{id}" />
+        <input type="text" th:field="*{title}" class="form-control mb-4 col-4" placeholder="title" required />
+        <input type="text" th:field="*{content}" class="form-control mb-4 col-4" placeholder="content" required />
+        <input type="text" th:field="*{rate}" class="form-control mb-4 col-4" placeholder="rate" required />
+        <input type="text" th:field="*{created}" class="form-control mb-4 col-4" placeholder="created" required />
+        <input type="text" th:field="*{author}" class="form-control mb-4 col-4" placeholder="author" required />
+        <button type="submit" class="btn btn-info col-2">Save</button>
+    </form>
+    <hr>
+    <a th:href="@{/entry/list}">Back to Entry List</a>
+</div>
+</body>
+
+</html>
