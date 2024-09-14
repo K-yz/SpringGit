@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>FAQ List</title>
+</head>
+<body>
+<h1>FAQ List</h1>
+<a href="/faq/new">Add New FAQ</a>
+<table>
+    <thead>
+    <tr>
+        <th>FAQ ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="faq : ${faqs}">
+        <td th:text="${faq.faqid}"></td>
+        <td th:text="${faq.name}"></td>
+        <td th:text="${faq.description}"></td>
+        <td>
+            <a th:href="@{/faq/edit/{id}(id=${faq.faqid})}">Edit</a>
+            <a th:href="@{/faq/delete/{id}(id=${faq.faqid})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

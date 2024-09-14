@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Post Form</title>
+</head>
+<body>
+<h1 th:text="${post == null} ? 'Add New Post' : 'Edit Post'"></h1>
+<form th:action="@{/posts}" th:object="${post}" method="post">
+    <input type="hidden" th:field="*{postsid}"/>
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" /><br/>
+    <label>Description:</label>
+    <textarea th:field="*{description}"></textarea><br/>
+    <button type="submit">Save</button>
+</form>
+<a href="/posts">Back to list</a>
+</body>
+</html>

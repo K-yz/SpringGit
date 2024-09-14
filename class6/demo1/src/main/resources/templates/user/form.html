@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Form</title>
+</head>
+<body>
+<h1 th:text="${user == null} ? 'Add New User' : 'Edit User'"></h1>
+<form th:action="@{/users}" th:object="${user}" method="post">
+    <input type="hidden" th:field="*{userid}"/>
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" /><br/>
+    <label>Password:</label>
+    <input type="password" th:field="*{password}" /><br/>
+    <button type="submit">Save</button>
+</form>
+<a href="/users">Back to list</a>
+</body>
+</html>

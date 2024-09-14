@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+<h1 th:text="${feedback == null} ? 'Add New Feedback' : 'Edit Feedback'"></h1>
+<form th:action="@{/feedback}" th:object="${feedback}" method="post">
+    <input type="hidden" th:field="*{feedbackid}"/>
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" /><br/>
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" /><br/>
+    <label>Subject:</label>
+    <input type="text" th:field="*{subject}" /><br/>
+    <label>Message:</label>
+    <textarea th:field="*{message}"></textarea><br/>
+    <button type="submit">Save</button>
+</form>
+<a href="/feedback">Back to list</a>
+</body>
+</html>
